@@ -1,0 +1,25 @@
+{
+    "winston": [{
+        "Console": {
+            "level": "debug",
+            "colorize": true,
+            "timestamp": true
+        }
+    }],
+    "mqtt": {
+        "host": "mqtts://localhost:8883",
+        "options": {
+            "rejectUnauthorized": false,
+            "username": "test",
+            "password": "test1234",
+            "clientId": "lox_to_mqtt_gateway"
+        }
+    },
+    "miniserver": {
+        "host": "192.164.0.77:80",
+        "username": "testlox",
+        "password": "1234",
+        "readonly": false,
+        "mqtt_prefix": "lox"
+    }
+}
