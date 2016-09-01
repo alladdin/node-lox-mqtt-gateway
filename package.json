@@ -1,0 +1,29 @@
+{
+  "name": "node-lox-mqtt-gateway",
+  "version": "0.1.0",
+  "description": "Gateway for Loxone™ miniserver to communicate with mqtt broker",
+  "main": "lib/Gateway.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alladdin/node-lox-mqtt-gateway.git"
+  },
+  "keywords": [
+    "Loxone",
+    "API",
+    "mqtt"
+  ],
+  "author": "Ladislav Dokulil <alladdin@zemres.cz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alladdin/node-lox-mqtt-gateway/issues"
+  },
+  "homepage": "https://github.com/alladdin/node-lox-mqtt-gateway#readme",
+  "dependencies" : {
+      "node-lox-ws-api" : ">=0.1.0",
+      "node-lox-structure-file" : ">=0.1.0",
+      "unidecode": ">=1.7.0"
+  }
+}
