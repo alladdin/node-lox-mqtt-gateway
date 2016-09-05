@@ -27,7 +27,7 @@
   "dependencies": {
       "node-lox-ws-api" : ">=0.1.0",
       "node-lox-structure-file" : ">=0.1.2",
-      "unidecode": ">=1.7.0",
+      "unidecode": ">=0.1.7",
       "mqtt": ">=1.7.0",
       "winston": ">=2.2.0",
       "config": ">=1.20.0"
