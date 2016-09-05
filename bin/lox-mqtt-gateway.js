@@ -40,4 +40,21 @@ lox_client.on('get_structure_file', function(data) {
     });
 });
 
-lox_client.connect();
+mqtt_client.on('connect', function(conack){
+    lox_client.connect();
+});
+
+mqtt_client.on('message', function(topic, message, packet) {
+    if (!lox_mqtt_adaptor){
+        return;
+    }
+    var action = lox_mqtt_adaptor.get_command_from_topic(topic, message.toString());
+
+    app.logger.debug("MQTT Adaptor - for miniserver: ", {uuidAction: action.uuidAction, command: action.command});
+
+    if (!config.miniserver.readonly){
+        lox_client.send_cmd(action.uuidAction, action.command);
+    }else{
+        app.logger.debug("MQTT Adaptor - readonly mode");
+    }
+});
