@@ -17,6 +17,7 @@ Use it at your own risk.
 ## Quick start
 
 `sudo npm install -g node-lox-mqtt-gateway`
+
 `lox-mqtt-gateway --NODE_CONFIG='{"mqtt":{"host":"mqtt://localhost:1883","options":{"username":"XXX","password":"YYY"}},"miniserver":{"host":"192.168.0.77:80","username":"XXX","password":"YYY"}}'`
 
 ## MQTT Interface
