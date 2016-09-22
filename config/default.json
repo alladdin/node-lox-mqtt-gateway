@@ -20,6 +20,7 @@
         "username": "testlox",
         "password": "1234",
         "readonly": false,
+        "encrypted" : true,
         "mqtt_prefix": "lox"
     }
 }
