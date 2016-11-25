@@ -19,11 +19,14 @@ app.on('exit', function(code) {
     }
 });
 
-lox_client.on('update_event', function(uuid, value){
+function _update_event(uuid, value){
     if (lox_mqtt_adaptor){
         lox_mqtt_adaptor.set_value_for_uuid(uuid, value);
     }
-});
+};
+
+lox_client.on('update_event_text', _update_event);
+lox_client.on('update_event_value', _update_event);
 
 lox_client.on('get_structure_file', function(data) {
     if (lox_mqtt_adaptor){
