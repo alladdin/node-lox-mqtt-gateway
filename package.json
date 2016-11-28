@@ -1,6 +1,6 @@
 {
   "name": "node-lox-mqtt-gateway",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Gateway for Loxone™ miniserver to communicate with mqtt broker",
   "main": "lib/index.js",
   "bin": {
