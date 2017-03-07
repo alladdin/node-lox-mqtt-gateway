@@ -44,7 +44,9 @@ lox_client.on('get_structure_file', function(data) {
 });
 
 mqtt_client.on('connect', function(conack){
-    lox_client.connect();
+    if (!lox_client.is_connected()){
+        lox_client.connect();
+    }
 });
 
 mqtt_client.on('message', function(topic, message, packet) {
