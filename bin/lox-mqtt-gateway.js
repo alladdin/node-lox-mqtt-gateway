@@ -33,7 +33,11 @@ lox_client.on('get_structure_file', function(data) {
         lox_mqtt_adaptor.abort();
     }
 
-    lox_mqtt_adaptor = new lox_mqtt_gateway.Adaptor(lox_mqtt_gateway.Structure.create_from_json(data));
+    lox_mqtt_adaptor = new lox_mqtt_gateway.Adaptor(lox_mqtt_gateway.Structure.create_from_json(data,
+        function(value) {
+            logger.warn("MQTT Structure - invalid type of control", value);
+        }
+    ));
 
     mqtt_client.subscribe(lox_mqtt_adaptor.get_topic_for_subscription());
 
