@@ -43,7 +43,8 @@ lox_client.on('get_structure_file', function(data) {
 
     lox_mqtt_adaptor.on('for_mqtt', function(topic, data){
         logger.debug("MQTT Adaptor - for mqtt: ", {topic: topic, data: data});
-        mqtt_client.publish(topic, data);
+        var fixedTopicName = topic.replace("+", "_").replace("#", "_")
+        mqtt_client.publish(fixedTopicName, data);
     });
 });
 
