@@ -37,7 +37,7 @@ lox_client.on('get_structure_file', function(data) {
         function(value) {
             logger.warn("MQTT Structure - invalid type of control", value);
         }
-    ));
+    ), config.get('miniserver.mqtt_prefix'));
 
     mqtt_client.subscribe(lox_mqtt_adaptor.get_topic_for_subscription());
 
